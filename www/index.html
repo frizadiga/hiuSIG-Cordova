@@ -27,15 +27,18 @@
 		<a class="w3-bar-item w3-button" href="#">Posting</a>
 	</nav>
 
+<!-- HEADER -->
 	<header class="w3-top w3-bar w3-theme">
-		<button class="Xtoolbar-item w3-bar-item w3-button Xw3-xxlarge w3-hover-theme" onclick="openSidebar()"><b>&#9776;</b></button>
-		<b class="Xtoolbar-item w3-bar-item">hiuSIG</b>
+		<button class="Xtoolbar-item w3-bar-item w3-button w3-hover-theme" onclick="openSidebar()"><b>&#9776;</b></button>
+		<b class="Xtoolbar-item w3-bar-item" style="padding-left: 0px">hiuSIG</b>
 	</header>
 
 	<!-- Main -->
 	<div id="main" class="w3-container" style="margin-top:38px;margin-bottom:46px">
-		<hr>
+		
 		<!-- list card -->
+		<div id="listing-card">
+		<hr>
 		<div class="w3-cell-row">
 			<div class="w3-cell" style="width:30%">
 				<img class="Xw3-circle" src="img/property-1.jpg" style="width:100%">
@@ -44,59 +47,15 @@
 				<h5>Villa Seminyak Beach</h5>
 				<p>Villa di seminyak dengan view menghadap pantai.	</p>
 			</div>
+		
+		</div>
+		<hr>
 		</div>
 		<!-- end list card -->
-		<hr>
-		<!-- list card -->
-		<div class="w3-cell-row">
-			<div class="w3-cell" style="width:30%">
-				<img class="Xw3-circle" src="img/property-1.jpg" style="width:100%">
-			</div>
-			<div class="w3-cell w3-container">
-				<h5>Villa Seminyak Beach</h5>
-				<p>Villa di seminyak dengan view menghadap pantai.	</p>
-			</div>
-		</div>
-		<!-- end list card -->
-		<hr>
-		<!-- list card -->
-		<div class="w3-cell-row">
-			<div class="w3-cell" style="width:30%">
-				<img class="Xw3-circle" src="img/property-1.jpg" style="width:100%">
-			</div>
-			<div class="w3-cell w3-container">
-				<h5>Villa Seminyak Beach</h5>
-				<p>Villa di seminyak dengan view menghadap pantai.	</p>
-			</div>
-		</div>
-		<!-- end list card -->
-		<hr>
-		<!-- list card -->
-		<div class="w3-cell-row">
-			<div class="w3-cell" style="width:30%">
-				<img class="Xw3-circle" src="img/property-1.jpg" style="width:100%">
-			</div>
-			<div class="w3-cell w3-container">
-				<h5>Villa Seminyak Beach</h5>
-				<p>Villa di seminyak dengan view menghadap pantai.	</p>
-			</div>
-		</div>
-		<!-- end list card -->
-		<hr>
-		<!-- list card -->
-		<div class="w3-cell-row">
-			<div class="w3-cell" style="width:30%">
-				<img class="Xw3-circle" src="img/property-1.jpg" style="width:100%">
-			</div>
-			<div class="w3-cell w3-container">
-				<h5>Villa Seminyak Beach</h5>
-				<p>Villa di seminyak dengan view menghadap pantai.	</p>
-			</div>
-		</div>
-		<!-- end list card -->
-		<hr>
+	
 	</div>
 
+<!-- FOOTER -->
 	<footer class="w3-bar w3-bottom w3-theme w3-margin-topX Xw3-padding-small w3-theme-d2">
 		<a class="w3-bar-item w3-button w3-padding-large" style="width:33.33%" href="#"><i class="fa fa-home"></i></a>
 		<a class="w3-bar-item w3-button w3-padding-large" style="width:33.33%" href="#"><i class="fa fa-search"></i></a>
@@ -104,12 +63,24 @@
 	</footer>
 <script>
 	closeSidebar();
+	loopListing();
 	function openSidebar(){
 		document.getElementById('mySidebar').style.display = 'block';
 	}
 	function closeSidebar(){
 		document.getElementById('mySidebar').style.display = 'none';
 	}
+	// looping listing
+  function loopListing(){
+  var loop = 5;
+  var listingCard = document.getElementById('listing-card').innerHTML;
+  var listing = '';
+  for (var i = loop - 1 ; i >= 0; i--) {
+  	listing += listingCard;
+  }
+ 	var main = document.getElementById('main');
+ 	main.innerHTML = listing;
+}
 </script>
 </body>
 </html>
