@@ -41,21 +41,23 @@
 		<div id="tab-listing" class="tabs">
 			<!-- list card -->
 		<div id="listing-card">
-		<div class="">
+		<div  class="w3-card w3-section">
+		<div class="w3-container">
+			<h5>Villa Seminyak Beach</h5>
+		</div>
 			<div class="" style="width:100%">
 				<img class="" src="img/property-1.jpg" style="width:100%">
 			</div>
 			<div class="w3-container">
-				<h5>Villa Seminyak Beach</h5>
 				<p>villa di seminyak dengan view menghadap pantai.</p>
 			</div>
 			
-		</div>
-		<div class="w3-center" style="margin-left: 16px;margin-right: 16px">
+		<div class="w3-center">
 			<button class="w3-button w3-hover-blue"  style="/*width:45%"><i class="fa fa-user"></i> Agen</button>
 			<button class="w3-button w3-hover-green" style="/*width:45%"><i class="fa fa-info"></i> Detail</button>
 		</div>
-		<hr>
+		<!-- <hr> -->
+		</div>
 		</div>
 		<!-- end list card -->	
 		</div>
@@ -106,7 +108,7 @@
 	
 	closeSidebar();
 	loopListing();
-	defaultTab('tab-search');
+	defaultTab('tab-listing');
 	function defaultTab(tabName) {
 		document.getElementById('tab-listing').style.display = 'none';
 		document.getElementById(tabName).style.display = 'block';
