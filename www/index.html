@@ -35,7 +35,7 @@
 	</header>
 
 	<!-- MAIN -->
-	<div id="main" class="w3-text-grey" style="margin-top:38px;margin-bottom:46px;padding-top:28px">
+	<div id="main" class="w3-text-grey" style="margin-top:38px;margin-bottom:46px;">
 
 	  <!-- TAB LISTING -->
 		<div id="tab-listing" class="tabs">
@@ -62,15 +62,35 @@
 		
 		<!-- TAB SEARCH -->
 		<div id="tab-search" class="tabs" style="display: none;">
-			<div class="w3-container">
+			<div class="w3-container w3-center">
 				<h3>Search Tab</h3>
+				<input class="w3-radio" type="radio" name="status" value="dijual">
+				<label>Dijual</label>
+				<input class="w3-radio" type="radio" name="status" value="disewa">
+				<label>Disewa</label>
+				<p>
+					<select class="w3-select w3-border" name="type">
+					<option value="" disabled selected>--Pilih--</option>
+					<option value="rumah">Rumah</option>
+					<option value="tanah">Tanah</option>
+				</select>	
+				</p>
+				<p>
+					<input class="w3-input w3-border" type="text" name="">
+				</p>
+				
 			</div>
 		</div>
 
 		<!-- TAB PROFILE -->
 		<div id="tab-profile" class="tabs" style="display: none">
-			<div class="w3-container">
+			<div class="w3-container w3-center">
 				<h3>Profile Tab</h3>
+				<img class="w3-circle" width="50%" src="img/avatar-female.png">
+				<p>
+				nama <br>
+				level pengguna <br>
+				</p>
 			</div>
 		</div>
 	
@@ -78,15 +98,19 @@
 
 <!-- NAVIGATION FOOTER -->
 	<footer class="w3-bar w3-bottom w3-theme w3-theme-d2">
-		<button onclick="openTab('tab-listing')" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-hover-text-grey" style="width:33.33%"><i class="fa fa-home"></i></button>
-		<button onclick="openTab('tab-search')" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-hover-text-grey" style="width:33.33%"><i class="fa fa-search"></i></button>
-		<button onclick="openTab('tab-profile')" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-hover-text-grey" style="width:33.33%"><i class="fa fa-user"></i></button>	
+		<button onclick="openTab('tab-listing')" class="w3-bar-item w3-button w3-padding-large w3-hover-none w3-hover-text-white" style="width:33.33%"><i class="fa fa-home"></i></button>
+		<button onclick="openTab('tab-search')" class="w3-bar-item w3-button w3-padding-large w3-hover-none w3-hover-text-white" style="width:33.33%"><i class="fa fa-search"></i></button>
+		<button onclick="openTab('tab-profile')" class="w3-bar-item w3-button w3-padding-large w3-hover-none w3-hover-text-white" style="width:33.33%"><i class="fa fa-user"></i></button>	
 	</footer>
 <script>
 	
 	closeSidebar();
 	loopListing();
-
+	defaultTab('tab-search');
+	function defaultTab(tabName) {
+		document.getElementById('tab-listing').style.display = 'none';
+		document.getElementById(tabName).style.display = 'block';
+	}
 	function openTab(tabName){
 		var i;
 		var x = document.getElementsByClassName("tabs");
