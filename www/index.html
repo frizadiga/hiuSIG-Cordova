@@ -34,11 +34,13 @@
 		<b class="w3-bar-item" style="padding-left: 0px">hiuSIG</b>
 	</header>
 
-	<!-- Main -->
-	<div id="main" class="Xw3-container w3-text-grey" style="margin-top:38px;margin-bottom:46px;padding-top:28px">
-		
-		<!-- list card -->
-		<div id="listing-card" class="">
+	<!-- MAIN -->
+	<div id="main" class="w3-text-grey" style="margin-top:38px;margin-bottom:46px;padding-top:28px">
+
+	  <!-- TAB LISTING -->
+		<div id="tab-listing" class="tabs">
+			<!-- list card -->
+		<div id="listing-card">
 		<div class="">
 			<div class="" style="width:100%">
 				<img class="" src="img/property-1.jpg" style="width:100%">
@@ -50,27 +52,54 @@
 			
 		</div>
 		<div class="w3-center" style="margin-left: 16px;margin-right: 16px">
-				<button class="w3-button w3-hover-blue"  style="/*width:45%"><i class="fa fa-user"></i> Agen</button>
-				<button class="w3-button w3-hover-green" style="/*width:45%"><i class="fa fa-info"></i> Detail</button>
-			</div>
+			<button class="w3-button w3-hover-blue"  style="/*width:45%"><i class="fa fa-user"></i> Agen</button>
+			<button class="w3-button w3-hover-green" style="/*width:45%"><i class="fa fa-info"></i> Detail</button>
+		</div>
 		<hr>
 		</div>
-		<!-- end list card -->
+		<!-- end list card -->	
+		</div>
+		
+		<!-- TAB SEARCH -->
+		<div id="tab-search" class="tabs" style="display: none;">
+			<div class="w3-container">
+				<h3>Search Tab</h3>
+			</div>
+		</div>
+
+		<!-- TAB PROFILE -->
+		<div id="tab-profile" class="tabs" style="display: none">
+			<div class="w3-container">
+				<h3>Profile Tab</h3>
+			</div>
+		</div>
 	
 	</div>
 
-<!-- FOOTER -->
+<!-- NAVIGATION FOOTER -->
 	<footer class="w3-bar w3-bottom w3-theme w3-theme-d2">
-		<a class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-hover-text-grey" style="width:33.33%" href="#"><i class="fa fa-home"></i></a>
-		<a class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-hover-text-grey" style="width:33.33%" href="#"><i class="fa fa-search"></i></a>
-		<a class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-hover-text-grey" style="width:33.33%" href="#"><i class="fa fa-user"></i></a>	
+		<button onclick="openTab('tab-listing')" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-hover-text-grey" style="width:33.33%"><i class="fa fa-home"></i></button>
+		<button onclick="openTab('tab-search')" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-hover-text-grey" style="width:33.33%"><i class="fa fa-search"></i></button>
+		<button onclick="openTab('tab-profile')" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-hover-text-grey" style="width:33.33%"><i class="fa fa-user"></i></button>	
 	</footer>
 <script>
+	
 	closeSidebar();
 	loopListing();
+
+	function openTab(tabName){
+		var i;
+		var x = document.getElementsByClassName("tabs");
+		for(i=0;i<x.length;i++){
+			x[i].style.display = "none";
+		}
+		document.getElementById(tabName).style.display = 'block';
+	}
+
 	function openSidebar(){
 		document.getElementById('mySidebar').style.display = 'block';
 	}
+
 	function closeSidebar(){
 		document.getElementById('mySidebar').style.display = 'none';
 	}
@@ -82,7 +111,7 @@
   for (var i = loop - 1 ; i >= 0; i--) {
   	listing += listingCard;
   }
- 	var main = document.getElementById('main');
+ 	var main = document.getElementById('tab-listing');
  	main.innerHTML = listing;
 }
 </script>
